@@ -1,0 +1,139 @@
+<include file="Public/head"/>
+<body class="no-skin">
+<include file="Public/header"/>
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+        try {
+            ace.settings.check('main-container', 'fixed')
+        } catch (e) {
+        }
+    </script>
+
+    <include file="Public/sidebar"/>
+    <div class="main-content">
+        <div class="main-content-inner">
+            <!-- #section:basics/content.breadcrumbs -->
+            <include file="Public/breadcrumbs"/>
+
+            <!-- /section:basics/content.breadcrumbs -->
+            <div class="page-content">
+                <include file="Public/set"/>
+
+                <!-- /section:settings.box -->
+                <div class="row">
+                    <div class="col-xs-12">
+                        <form class="form-horizontal" id="form" method="post" action="{:U('updateTi')}">
+
+                            <!-- PAGE CONTENT BEGINS -->
+
+                            <input type="hidden" name="id" value="{$ti.id}" id="id"/>
+                            <input type="hidden" name="bid" value="{$bid}" id="id"/>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2">
+                                    题干 </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="question" id="keywords" placeholder="题干"
+                                           class="col-xs-10 col-sm-5" value="{$ti['question']}">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+                                        <span class="middle">题干。</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2">
+                                    A </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="a_a" id="keywords" placeholder="A"
+                                           class="col-xs-10 col-sm-5" value="{$ti['a']}">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+                                        <span class="middle">A选项。</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2">
+                                    B </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="b_b" id="keywords" placeholder="B"
+                                           class="col-xs-10 col-sm-5" value="{$ti['b']}">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+                                        <span class="middle">B选项。</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2">
+                                    C </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="c_c" id="keywords" placeholder="C"
+                                           class="col-xs-10 col-sm-5" value="{$ti['c']}">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+                                        <span class="middle">C选项。</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2">
+                                    D </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="d_d" id="keywords" placeholder="D"
+                                           class="col-xs-10 col-sm-5" value="{$ti['d']}">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+                                        <span class="middle">D选项。</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="space-4"></div>
+                            <div class="form-group">
+                                <label class="col-sm-1 control-label no-padding-right" for="form-field-2">
+                                    正确答案 </label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="right" id="keywords" placeholder="正确答案"
+                                           class="col-xs-10 col-sm-5" value="{$ti['right']}">
+                                    <span class="help-inline col-xs-12 col-sm-7">
+                                        <span class="middle">正确答案（a，b，c，d）。</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-md-offset-2 col-md-9">
+                                <button class="btn btn-info submit" type="button">
+                                    <i class="icon-ok bigger-110"></i>
+                                    提交
+                                </button>
+
+                                &nbsp; &nbsp; &nbsp;
+                                <button class="btn" type="reset">
+                                    <i class="icon-undo bigger-110"></i>
+                                    重置
+                                </button>
+                            </div>
+
+                            <!-- PAGE CONTENT ENDS -->
+
+
+                        </form>
+                    </div><!-- /.col -->
+                </div><!-- /.row -->
+            </div><!-- /.page-content -->
+        </div>
+    </div><!-- /.main-content -->
+    <include file="Public/footer"/>
+
+</div><!-- /.main-container -->
+
+<include file="Public/footerjs"/>
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+    $(function () {
+        $(".submit").click(function () {
+            $("#form").submit();
+        });
+    });
+</script>
+</body>
+</html>

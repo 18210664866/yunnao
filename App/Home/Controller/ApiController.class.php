@@ -29,7 +29,6 @@ class ApiController extends ComController {
 
     public function getClassBooks() {
         $back = D("Class")->getClassBooksInfo();
-        $a = $this->aa();
         echo json_encode($back);
         exit();
     }

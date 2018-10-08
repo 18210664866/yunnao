@@ -49,14 +49,18 @@ class ClassModel extends Model {
     }
 
     //根据CID获取对应的书
-    public function getBooks($cid) {
-        $books = M("class_books")->where("cid=" . $cid)->select();
-        $res = array();
-        foreach ($books as $k => $v) {
-            $res[$k]['id'] = $v['id'];
-            $res[$k]['img_url'] = $v['img_url'];
+    public function getBooks($cid = "") {
+        if($cid){
+            $books = M("class_books")->where("cid=" . $cid)->select();
+            $res = array();
+            foreach ($books as $k => $v) {
+                $res[$k]['id'] = $v['id'];
+                $res[$k]['img_url'] = $v['img_url'];
+            }
+            return $res;
+        }else{
+            return false;
         }
-        return $res;
     }
     
     //获取书的内容
